@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 /*
@@ -70,16 +71,16 @@ module.exports = {
 		chunkFilename: '[name].[chunkhash].js',
 		filename: '[name].[chunkhash].js'
 	},
-	plugins: [new HtmlWebpackPlugin({
-		title: "Ripples",
-		inject: false,
-		mobile: true,
-		scripts: ["https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js", "https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"],
-		template: "./src/template.html",
-	})],	
-
-	mode: 'development',
-
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: "Ripples",
+			inject: false,
+			mobile: true,
+			scripts: ["https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js", "https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"],
+			template: "./src/template.html",
+		}),
+		new CleanWebpackPlugin(),
+	],	
 	optimization: {
 		splitChunks: {
 			cacheGroups: {
