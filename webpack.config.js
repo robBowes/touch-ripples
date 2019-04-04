@@ -73,7 +73,7 @@ module.exports = {
       mobile: true,
       scripts: [
         "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"
+        // "https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"
       ],
       template: "./src/template.html"
     }),
@@ -94,7 +94,7 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "dev"),
     compress: true,
     port: 8000
 	},
